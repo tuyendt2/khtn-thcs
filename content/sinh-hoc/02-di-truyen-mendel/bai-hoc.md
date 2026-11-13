@@ -26,6 +26,8 @@
 - Khi giảm phân tạo giao tử, **mỗi allele của cặp phân li về một giao tử** (giao tử "thuần khiết"): $Aa$ tạo hai loại giao tử $A$ và $a$ với tỉ lệ bằng nhau.
 - Khi thụ tinh, các giao tử kết hợp **ngẫu nhiên**.
 
+![Sự phân li của cặp nhân tố di truyền khi tạo giao tử và tổ hợp lại khi thụ tinh](hinh/kt-phan-li.svg)
+
 **Sơ đồ lai:**
 $$P_{tc}:\ AA\ (\text{vàng}) \times aa\ (\text{xanh}) \quad\to\quad G_P:\ A,\ a \quad\to\quad F_1:\ Aa\ (100\%\text{ vàng}).$$
 $F_1 \times F_1$: $Aa \times Aa$, mỗi bên cho giao tử $\frac12A : \frac12a$. Kẻ **khung Punnett**:
@@ -57,6 +59,8 @@ $$(3\text{ vàng} : 1\text{ xanh})(3\text{ trơn} : 1\text{ nhăn}) = 9 : 3 : 3 
 Điều này chỉ đúng khi hai cặp tính trạng di truyền **độc lập** với nhau.
 
 **Giải thích:** quy ước $A$ vàng, $a$ xanh, $B$ trơn, $b$ nhăn. $F_1$: $AaBb$. Khi giảm phân, hai cặp allele phân li độc lập, nên $F_1$ tạo **4 loại giao tử** $AB, Ab, aB, ab$ với tỉ lệ bằng nhau. Thụ tinh ngẫu nhiên tạo $4\times4 = 16$ tổ hợp.
+
+![Khung Punnett phép lai AaBb × AaBb: 16 tổ hợp, 4 nhóm kiểu hình 9 : 3 : 3 : 1](hinh/kt-punnett.svg)
 
 **Quy luật phân li độc lập:** các cặp nhân tố di truyền (cặp gen) phân li độc lập trong quá trình phát sinh giao tử. Điều kiện: các cặp gen nằm trên **các cặp nhiễm sắc thể khác nhau**.
 

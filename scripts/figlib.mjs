@@ -134,10 +134,20 @@ export function fig(caption, opts = {}) {
 
 const r1 = (x) => Math.round(x * 10) / 10;
 function render(caption, items, ext, opts) {
-  const xs = ext.map((p) => p.x), ys = ext.map((p) => p.y);
-  const minX = Math.min(...xs) - (opts.padX || 0), maxX = Math.max(...xs) + (opts.padX || 0);
-  const minY = Math.min(...ys), maxY = Math.max(...ys);
-  const s = Math.min((opts.maxW || 330) / (maxX - minX || 1), (opts.maxH || 240) / (maxY - minY || 1), opts.maxScale || 60), pad = 20;
+  // Fit the drawing, then widen the box so that text labels (fixed pixel size) fit too.
+  const texts = items.filter((it) => it.k === "text");
+  const px = (it) => (/big/.test(it.cls) ? 9.5 : /small|note/.test(it.cls) ? 6.6 : 8) * String(it.s).replace(/[_^]\{([^}]*)\}/g, "$1").length / 2;
+  let minX, maxX, minY, maxY, s;
+  const fit = (extra) => {
+    const all = [...ext, ...extra];
+    const xs = all.map((p) => p.x), ys = all.map((p) => p.y);
+    minX = Math.min(...xs) - (opts.padX || 0); maxX = Math.max(...xs) + (opts.padX || 0);
+    minY = Math.min(...ys); maxY = Math.max(...ys);
+    s = Math.min((opts.maxW || 330) / (maxX - minX || 1), (opts.maxH || 240) / (maxY - minY || 1), opts.maxScale || 60);
+  };
+  fit([]);
+  for (let k = 0; k < 3; k++) fit(texts.flatMap((it) => [P(it.p.x - px(it) / s, it.p.y), P(it.p.x + px(it) / s, it.p.y)]));
+  const pad = 20;
   const W = Math.round((maxX - minX) * s + 2 * pad), H = Math.round((maxY - minY) * s + 2 * pad);
   const X = (p) => r1((p.x - minX) * s + pad), Y = (p) => r1((maxY - p.y) * s + pad);
   const c = (cls) => (cls ? ` class="${cls}"` : "");
@@ -170,7 +180,7 @@ export const STYLE =
   ".ray{stroke:#e53935;stroke-width:1.8}.head{fill:#1a1a1a;stroke:none}.head.ray{fill:#e53935}.head.hi{fill:#0f6b5c}" +
   ".fillA{fill:rgba(30,136,229,.18)}.fillB{fill:rgba(229,57,53,.16)}.fillC{fill:rgba(67,160,71,.2)}.fillG{fill:rgba(128,128,128,.22)}" +
   ".fillY{fill:rgba(255,193,7,.32)}.water{fill:rgba(30,136,229,.2);stroke:none}.oil{fill:rgba(255,193,7,.35);stroke:none}" +
-  ".dot.hollow{fill:#fff;stroke:#1a1a1a;stroke-width:1.5}.lbl{font-style:italic}.small{font-size:13px}.note{font-size:13.5px}" +
+  ".dot.hollow{fill:#fff;stroke:#1a1a1a;stroke-width:1.5}.affected{fill:#444}.lbl{font-style:italic}.small{font-size:13px}.note{font-size:13.5px}" +
   ".b{font-weight:bold}.meter{font-weight:bold;font-size:15px}.big{font-size:19px;font-weight:bold}</style>";
 export const standalone = (svg) =>
   svg.replace('<svg class="geo"', '<svg xmlns="http://www.w3.org/2000/svg" class="geo" style="color:#1a1a1a;background:#fff"')

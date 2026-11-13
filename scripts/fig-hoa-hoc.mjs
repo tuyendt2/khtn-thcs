@@ -117,7 +117,7 @@ const kimLoai = {
 
 const phiKim = {
   "kt-bang-tuan-hoan": () => {
-    const g = fig("Ba chu kì đầu của bảng tuần hoàn: kim loại (xanh), phi kim (lục), khí hiếm (vàng)", { padX: 0.9 });
+    const g = fig("Ba chu kì đầu của bảng tuần hoàn: kim loại (xanh), phi kim (lục), khí hiếm (vàng)", { maxW: 340, maxH: 260 });
     const rows = [
       [[1, "H", 1, "pk"], [8, "He", 2, "kh"]],
       [[1, "Li", 3, "kl"], [2, "Be", 4, "kl"], [3, "B", 5, "pk"], [4, "C", 6, "pk"], [5, "N", 7, "pk"], [6, "O", 8, "pk"], [7, "F", 9, "pk"], [8, "Ne", 10, "kh"]],
@@ -134,7 +134,7 @@ const phiKim = {
     });
     g.text(P(-0.8, 1.2), "Chu kì", "small");
     g.arrow(P(0, -2.4), P(6.3, -2.4), "hi").text(P(3.15, -2.75), "tính phi kim tăng →", "note");
-    return g.arrow(P(7.0, 0.3), P(7.0, -2.0), "ray").text(P(7.85, -0.9), "tính kim", "small").text(P(7.85, -1.25), "loại tăng", "small").svg();
+    return g.arrow(P(6.9, 0.3), P(6.9, -2.0), "ray").text(P(3.15, -3.1), "↓ tính kim loại tăng (trong một nhóm)", "note").svg();
   },
 };
 

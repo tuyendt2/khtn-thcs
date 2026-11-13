@@ -24,6 +24,22 @@ const SUBJECTS = [
   { id: "sinh-hoc", name: "Sinh học", icon: "🧬" },
 ];
 
+// Short names for topics whose full title is long (used in tiles and headers).
+const SHORT = {
+  "vat-li-ap-suat": "Áp suất, Archimedes",
+  "vat-li-chuyen-dong-luc": "Chuyển động và lực",
+  "vat-li-don-bay-cong-nang-luong": "Đòn bẩy, công, năng lượng",
+  "hoa-hoc-nguyen-tu-mol-phan-ung": "Nguyên tử, mol, phản ứng",
+  "hoa-hoc-dung-dich": "Dung dịch, nồng độ",
+  "hoa-hoc-kim-loai": "Kim loại",
+  "hoa-hoc-phi-kim-bang-tuan-hoan": "Phi kim, bảng tuần hoàn",
+  "hoa-hoc-phuong-phap-giai-toan": "Phương pháp giải toán",
+  "sinh-hoc-nhiem-sac-the": "Nhiễm sắc thể",
+  "sinh-hoc-dna-rna-protein": "DNA, RNA, protein",
+  "sinh-hoc-dot-bien-di-truyen-nguoi": "Đột biến, di truyền người",
+  "sinh-hoc-sinh-thai-tien-hoa": "Sinh thái, tiến hóa",
+};
+
 const issues = [];
 let where = "";
 let figDir = ""; // folder of the lesson being rendered, for hinh/*.svg
@@ -87,7 +103,7 @@ function buildTopic(subject, dir) {
   figDir = base;
   const lesson = read(path.join(base, "bai-hoc.md"));
   const title = lesson.match(/^# (.+)$/m)[1].replace(/^Chủ đề \d+\.\s*/, "");
-  const short = title.split(":")[0].replace(/\s*\(.*\)\s*$/, "").trim();
+  const short = SHORT[`${subject.id}-${slug}`] || title.split(":")[0].replace(/\s*\(.*\)\s*$/, "").trim();
   const lead = between(lesson, /^# .+$/m, /^## I\./m);
 
   const knowledge = [];

@@ -9,7 +9,7 @@
 - **Hình vẽ** (sơ đồ mạch điện, ...) vẽ bằng code, đổi màu theo giao diện sáng/tối.
 - Dùng được khi không có mạng; tiến độ lưu trên máy, không cần tài khoản.
 
-**Bản thử hiện có:** Vật lí: Điện học · Hóa học: Dung dịch và nồng độ · Sinh học: Di truyền học Mendel (mỗi chủ đề 16 bài: 8 cơ bản + 8 nâng cao).
+**Nội dung:** Vật lí 7 chủ đề, Hóa học 7 chủ đề, Sinh học 6 chủ đề (tổng 20 chủ đề, 252 bài tập, hơn 300 thẻ ghi nhớ, 74 hình vẽ).
 
 **Dùng thử:** https://tuyendt2.github.io/khtn-thcs/
 

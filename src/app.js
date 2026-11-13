@@ -136,7 +136,7 @@
           <li><b>Bài tập:</b> làm ra giấy trước. Bí thì mở <i>ý tưởng</i>, rồi <i>gợi ý 1</i>, <i>gợi ý 2</i>, cuối cùng mới xem lời giải.</li>
           <li>Làm xong, tự đánh giá. Bài "nhờ gợi ý" hẹn làm lại sau 7 ngày, bài "chưa làm được" sau 3 ngày.</li>
         </ol>
-        <p class="muted">Bản thử: mỗi môn có 1 chủ đề, các chủ đề khác sẽ được bổ sung. Tiến độ chỉ lưu trên máy này.</p>
+        <p class="muted">Tiến độ chỉ lưu trên máy này, không cần tài khoản.</p>
       </div>
       <details class="k"><summary>📲 Cài lên màn hình chính</summary>
         <div class="content small">
@@ -165,7 +165,6 @@
           <div class="progress thin"><div style="width:${pct(st.solo, st.total)}%"></div></div></div>
           ${st.redo ? `<span class="badge-count warn">${st.redo} làm lại</span>` : ""}</a>`;
       }).join("")}</div>
-      <p class="small muted">Các chủ đề khác của môn ${s.name} sẽ được bổ sung trong các bản sau.</p>
     </main>`;
   }
 
