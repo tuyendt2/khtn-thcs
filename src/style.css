@@ -233,3 +233,24 @@ details.k > summary > span:last-of-type { flex: 1; }
 .geo .meter { font-weight: bold; font-size: 15px; }
 .geo .note { font-size: 14px; }
 .content .fig { margin: 10px 0; }
+/* KHTN figure palette (works in light and dark themes) */
+.geo .thin { stroke-width: 1.1; }
+.geo .aux { stroke-dasharray: 5 4; opacity: .8; }
+.geo .hi { stroke: var(--brand); stroke-width: 2.4; }
+.geo .ray { stroke: #e53935; stroke-width: 1.8; }
+:root[data-theme="dark"] .geo .ray { stroke: #ff7a70; }
+.geo .head { fill: currentColor; stroke: none; }
+.geo .head.hi { fill: var(--brand); }
+.geo .head.ray { fill: #e53935; }
+:root[data-theme="dark"] .geo .head.ray { fill: #ff7a70; }
+.geo .fillA { fill: rgba(30, 136, 229, .2); }
+.geo .fillB { fill: rgba(229, 57, 53, .18); }
+.geo .fillC { fill: rgba(67, 160, 71, .22); }
+.geo .fillG { fill: rgba(128, 128, 128, .25); }
+.geo .fillY { fill: rgba(255, 193, 7, .32); }
+.geo .water { fill: rgba(30, 136, 229, .22); stroke: none; }
+.geo .oil { fill: rgba(255, 193, 7, .38); stroke: none; }
+.geo .lbl.small, .geo .small { font-size: 13px; }
+.geo .b { font-weight: bold; }
+.geo .big { font-size: 19px; font-weight: bold; }
+.geo .note { font-size: 13.5px; }

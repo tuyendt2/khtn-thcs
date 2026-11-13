@@ -17,6 +17,8 @@ $$I = \frac UR.$$
 Cường độ dòng điện qua một dây dẫn tỉ lệ thuận với hiệu điện thế đặt vào hai đầu dây và tỉ lệ nghịch với điện trở của dây.
 - **Điện trở** $R = \frac UI$ đặc trưng cho mức độ cản trở dòng điện của dây dẫn. Đơn vị: ôm ($\Omega$); $1\text{ k}\Omega = 1000\ \Omega$.
 - Với một dây dẫn cho trước (nhiệt độ không đổi), $R$ là hằng số: tăng $U$ gấp đôi thì $I$ tăng gấp đôi. Vì vậy đồ thị $I$ theo $U$ là **một đường thẳng đi qua gốc tọa độ**; dây có điện trở càng lớn thì đường thẳng càng thoải.
+![Đồ thị I theo U của hai dây dẫn: đường dốc hơn ứng với điện trở nhỏ hơn](hinh/kt-ohm.svg)
+
 - **Lỗi hay gặp:** từ $R = \frac UI$ kết luận "điện trở tỉ lệ thuận với hiệu điện thế" là **sai**. Công thức này chỉ dùng để **tính** $R$; bản thân $R$ phụ thuộc vào dây dẫn (vật liệu, chiều dài, tiết diện), không phụ thuộc $U$ hay $I$.
 
 ### 3. Điện trở của dây dẫn
@@ -48,6 +50,8 @@ $$I = I_1 = I_2, \qquad U = U_1 + U_2, \qquad R_{\text{tđ}} = R_1 + R_2, \qquad
 - $R_{\text{tđ}} = \frac UI = \frac{U_1 + U_2}{I} = R_1 + R_2$.
 - $U_1 = IR_1$, $U_2 = IR_2$, nên **hiệu điện thế chia theo tỉ lệ thuận với điện trở**: điện trở nào lớn thì "giữ" nhiều hiệu điện thế hơn.
 
+![Đoạn mạch nối tiếp](hinh/kt-noi-tiep.svg)
+
 ### 5. Đoạn mạch song song
 Với $R_1$ song song $R_2$:
 $$U = U_1 = U_2, \qquad I = I_1 + I_2, \qquad \frac{1}{R_{\text{tđ}}} = \frac1{R_1} + \frac1{R_2}, \qquad \frac{I_1}{I_2} = \frac{R_2}{R_1}.$$
@@ -56,6 +60,8 @@ $$U = U_1 = U_2, \qquad I = I_1 + I_2, \qquad \frac{1}{R_{\text{tđ}}} = \frac1{
 - Dòng điện chia ra các nhánh rồi nhập lại, tổng không đổi.
 - $\frac{1}{R_{\text{tđ}}} = \frac IU = \frac{I_1 + I_2}{U} = \frac1{R_1} + \frac1{R_2}$.
 - $I_1 = \frac U{R_1}$, $I_2 = \frac{U}{R_2}$: **dòng điện chia theo tỉ lệ nghịch với điện trở**, nhánh nào điện trở nhỏ thì dòng lớn.
+
+![Đoạn mạch song song](hinh/kt-song-song.svg)
 
 **Hệ quả hay dùng:**
 - Hai điện trở: $R_{\text{tđ}} = \frac{R_1R_2}{R_1 + R_2}$.
@@ -99,6 +105,8 @@ $$Q = I^2Rt.$$
 
 ### 3. Mạch cầu
 Mạch cầu gồm 4 điện trở $R_1$ ($A$–$C$), $R_2$ ($C$–$B$), $R_3$ ($A$–$D$), $R_4$ ($D$–$B$) và một điện trở $R_5$ nối hai điểm $C$, $D$.
+![Mạch cầu gồm R₁, R₂, R₃, R₄ và R₅ nối C, D](hinh/kt-mach-cau.svg)
+
 - **Cầu cân bằng:** nếu $\frac{R_1}{R_2} = \frac{R_3}{R_4}$ thì $V_C = V_D$, dòng qua $R_5$ bằng 0; có thể bỏ $R_5$ (hoặc chập $C$ với $D$) khi tính toán.
   *Vì sao?* Khi bỏ $R_5$, nhánh $ACB$ chia hiệu điện thế theo tỉ lệ $R_1 : R_2$, nhánh $ADB$ theo tỉ lệ $R_3 : R_4$. Hai tỉ lệ bằng nhau thì $U_{AC} = U_{AD}$, tức là $V_C = V_D$; nối $R_5$ vào cũng không có dòng chạy qua.
 - **Cầu không cân bằng:** dùng phương pháp điện thế nút (hai ẩn $V_C$, $V_D$), hoặc phép biến đổi tam giác – sao.
@@ -115,6 +123,8 @@ Nguồn điện có hiệu điện thế $U$ không đổi mắc nối tiếp v�
 $$I = \frac{U}{R + r}, \qquad P_R = I^2R = \frac{U^2R}{(R + r)^2}.$$
 **Công suất trên $R$ lớn nhất khi $R = r$**, và $P_{\max} = \frac{U^2}{4r}$.
 *Chứng minh (dùng AM-GM, xem Toán chủ đề 7):* $\frac{(R + r)^2}{R} = R + 2r + \frac{r^2}{R} \ge 2r + 2\sqrt{R\cdot\frac{r^2}{R}} = 4r$, dấu "=" khi $R = \frac{r^2}{R}$, tức là $R = r$. Do đó $P_R \le \frac{U^2}{4r}$.
+
+![Đồ thị công suất trên R theo R: cực đại khi R = r](hinh/kt-cong-suat.svg)
 
 *Hệ quả:* với một giá trị $P < P_{\max}$, có hai giá trị $R_1, R_2$ cho cùng công suất và $R_1R_2 = r^2$ (theo định lý Viète cho phương trình $PR^2 + (2Pr - U^2)R + Pr^2 = 0$).
 
