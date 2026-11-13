@@ -18,6 +18,8 @@
 - Độ tan của **chất khí** **giảm** khi nhiệt độ tăng và **tăng** khi áp suất tăng. Vì vậy nước ngọt có ga để ấm thì "xì ga" mạnh hơn, và cá dễ thiếu oxygen khi nước ao nóng lên.
 - Theo độ tan ở 25 °C: chất **dễ tan** ($S > 10$ g), **ít tan** ($1 \le S \le 10$ g), **không tan** ($S < 1$ g); xem bảng tính tan cuối sách.
 
+![Đường cong độ tan: độ tan của KNO₃ tăng mạnh theo nhiệt độ, của NaCl gần như không đổi](hinh/kt-do-tan.svg)
+
 **Nồng độ phần trăm của dung dịch bão hòa** (suy ra từ định nghĩa): trong $100 + S$ gam dung dịch có $S$ gam chất tan, nên
 $$C\%_{\text{bão hòa}} = \frac{S}{100 + S}\cdot100\%.$$
 

@@ -35,7 +35,9 @@ const md = new MarkdownIt({ html: false, linkify: false, typographer: false }).u
     } catch (e) {
       issues.push(`${where}: ${e.message.slice(0, 120)}`);
     }
-    return `<span class="m${displayMode ? " d" : ""}">${escapeHtml(content)}</span>`;
+    // Long inline chemical equations cannot wrap; they get a scrollable box (class ce).
+    const ce = !displayMode && content.includes("\\ce{") && content.length > 24 ? " ce" : "";
+    return `<span class="m${displayMode ? " d" : ""}${ce}">${escapeHtml(content)}</span>`;
   },
 });
 // Figures: ![caption](hinh/x.svg) is inlined so it follows the app theme.
@@ -114,7 +116,7 @@ function buildTopic(subject, dir) {
   // Text before "**Bài 1" (e.g. atomic masses) is shown above the problem list.
   const firstProblem = partIII.search(/^\*\*Bài \d+/m);
   const problemsNote = firstProblem > 0 ? render(partIII.slice(0, firstProblem), `${id} ghi chú bài tập`) : "";
-  const problems = sections(partIII, /^\*\*Bài (\d+) \(([^)]*)\)\.\*\*/gm).map((s) => {
+  const problems = sections(partIII, /^\*\*Bài (\d+) \(((?:[^()]|\([^()]*\))*)\)\.\*\*/gm).map((s) => {
     const n = s.m[1];
     const [lv, ...rest] = s.m[2].split(",").map((x) => x.trim());
     if (!/^(Cơ bản|Nâng cao)$/.test(lv)) throw new Error(`${id}: Bài ${n} thiếu nhãn Cơ bản/Nâng cao`);

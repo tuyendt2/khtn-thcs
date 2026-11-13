@@ -254,3 +254,4 @@ details.k > summary > span:last-of-type { flex: 1; }
 .geo .b { font-weight: bold; }
 .geo .big { font-size: 19px; font-weight: bold; }
 .geo .note { font-size: 13.5px; }
+.content span.m.ce { display: inline-block; max-width: 100%; overflow-x: auto; overflow-y: hidden; vertical-align: middle; -webkit-overflow-scrolling: touch; }
